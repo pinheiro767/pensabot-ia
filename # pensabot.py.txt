@@ -16,9 +16,9 @@ palavras_ofensivas = ["idiota", "burro", "estúpido", "bosta", "otário"]
 
 # Lista de conselhos aleatórios para a inteligência
 conselhos_aleatorios = [
-    "Tire um minuto para observar algo no seu ambiente. Note cinco coisas que você nunca tinha notado antes.",
-    "Escolha um objeto simples e pergunte-se 'por quê?' cinco vezes sobre ele para descobrir algo novo.",
-    "Desafie-se a aprender uma palavra nova e seu significado hoje. A inteligência cresce com o vocabulário."
+    "Tire um minuto para observar algo no seu ambiente. Note cinco coisas que você nunca tinha notado antes.",
+    "Escolha um objeto simples e pergunte-se 'por quê?' cinco vezes sobre ele para descobrir algo novo.",
+    "Desafie-se a aprender uma palavra nova e seu significado hoje. A inteligência cresce com o vocabulário."
 ]
 
 # Introdução
@@ -27,25 +27,25 @@ print(f"{NOME_PENSABOT}: Estou aqui com você e não vou te abandonar. Por favor
 
 # O loop principal da conversa
 while True:
-    # Recebe o que o usuário digita
-    entrada_usuario = input("Você: ")
-    
-    # Se o usuário digitar 'sair', o programa termina a conversa
-    if entrada_usuario.lower() == "sair":
-        print(f"{NOME_PENSABOT}: A jornada continua. Até a próxima.")
-        break
-    
-    # Verifica se a entrada do usuário contém alguma palavra ofensiva
-    encontrou_ofensa = False
-    for palavra in palavras_ofensivas:
-        if palavra in entrada_usuario.lower():
-            encontrou_ofensa = True
-            break
+    # Recebe o que o usuário digita
+    entrada_usuario = "Me ajude com o meu projeto."
+    
+    # Se o usuário digitar 'sair', o programa termina a conversa
+    if entrada_usuario.lower() == "sair":
+        print(f"{NOME_PENSABOT}: A jornada continua. Até a próxima.")
+        break
+    
+    # Verifica se a entrada do usuário contém alguma palavra ofensiva
+    encontrou_ofensa = False
+    for palavra in palavras_ofensivas:
+        if palavra in entrada_usuario.lower():
+            encontrou_ofensa = True
+            break
 
-    # Lógica de resposta do Pensabot
-    if encontrou_ofensa:
-        print(f"{NOME_PENSABOT}: Cuidado com as palavras. Lembre-se, um verdadeiro mentor não é xingado, é respeitado. Vamos focar na nossa evolução.")
-    else:
-        # Usa o Gemini para gerar a resposta
-        response = modelo.generate_content(entrada_usuario)
-        print(f"{NOME_PENSABOT}: {response.text}")
+    # Lógica de resposta do Pensabot
+    if encontrou_ofensa:
+        print(f"{NOME_PENSABOT}: Cuidado com as palavras. Lembre-se, um verdadeiro mentor não é xingado, é respeitado. Vamos focar na nossa evolução.")
+    else:
+        # Usa o Gemini para gerar a resposta
+        response = modelo.generate_content(entrada_usuario)
+        print(f"{NOME_PENSABOT}: {response.text}")
